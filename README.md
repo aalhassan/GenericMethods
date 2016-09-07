@@ -1,4 +1,6 @@
-# jUnit and Log4J Exercises - Week 2
+# Santa In An Elevator - Week 2
+
+## jUnit and Log4J Exercises
 
 ### Instructions
 
