@@ -8,6 +8,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Practice working with JUnit by writing some test cases for the Interface List<E>:
@@ -36,6 +37,10 @@ public class ListTest {
         myList.add(elementToInsert);
         assertEquals("List size is incorrect", 4, myList.size());
         assertTrue("List missing inserted element", myList.contains(elementToInsert));
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testIndexOutOfBoundException() {
+        String elementToGet = myList.get(6);
     }
 
 
