@@ -1,6 +1,11 @@
 package edu.madisoncollege.entjava;
 
 
+import java.io.*;
+
+import org.apache.log4j.*;
+import sun.rmi.runtime.Log;
+
 /**
  * Created by paulawaite on 9/7/16.
  *
@@ -36,6 +41,44 @@ package edu.madisoncollege.entjava;
  */
 
 public class SantaInAnElevator {
+    private Logger logger = Logger.getLogger(this.getClass());
+
+    private StringBuffer movements;
+
+    public StringBuffer getMovements() {
+        return movements;
+    }
+
+    public void setMovements(StringBuffer movements) {
+        this.movements = movements;
+    }
+
+    public int getDeliveryFloor() {
+        int floor = 0;
+        for (int idx = 0; idx< movements.length(); idx++) {
+            if (movements.charAt(idx) == '(') {
+                floor++;
+            } else if (movements.charAt(idx) == ')') {
+                floor--;
+            }
+        }
+        return floor;
+    }
+
+    public void processDirections(String directionsFile) throws IOException {
+        movements = new StringBuffer();
+        String line ;
+        BufferedReader in = new BufferedReader(new FileReader(directionsFile));
+
+        while (in.ready()) {
+            line = in.readLine();
+            movements.append(line);
+        }
+
+        in.close();
+
+        this.getDeliveryFloor();
+    }
 
 
 }

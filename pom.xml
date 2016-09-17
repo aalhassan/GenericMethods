@@ -29,6 +29,22 @@
 
   </dependencies>
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/java/resources</directory>
+        <includes>
+          <include>**/*.txt</include>
+          <include>**/*.rtf</include>
+        </includes>
+      </resource>
+        <resource>
+            <directory>src/test/java/resources</directory>
+            <includes>
+                <include>**/*.txt</include>
+                <include>**/*.rtf</include>
+            </includes>
+        </resource>
+    </resources>
     <finalName>SantaWeek2Exercise</finalName>
   </build>
 </project>
