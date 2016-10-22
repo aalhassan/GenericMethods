@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GenericMethods:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="GenericMethodsDemo.war">
+      <element id="artifact" artifact-name="GenericMethods:war exploded" />
+    </root>
+  </artifact>
+</component>
